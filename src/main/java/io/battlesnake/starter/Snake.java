@@ -134,24 +134,24 @@ public class Snake {
               if (myX > (boardX - myX)) {
                 response.put("move", "left");
               } else {
-                reponse.put("move", "right");
+                response.put("move", "right");
               }
 
             } else {
               if (myX ==0 && myY == boardY) {
-                reponse.put("move", "right");
+                response.put("move", "right");
                 lastMove = "right";
               } else if (myY == boardY && myX == boardX) {
-                reponse.put("move", "up");
+                response.put("move", "up");
                 lastMove = "up";
               } else if (myY == 0 && myX == boardX) {
-                reponse.put("move", "left");
+                response.put("move", "left");
                 lastMove = "left";
               } else if (myY == 0 && myX == 0) {
-                reponse.put("move", "down");
+                response.put("move", "down");
                 lastMove = "down";
               } else {
-                reponse.put("move", lastMove);
+                response.put("move", lastMove);
               }
             }
 
