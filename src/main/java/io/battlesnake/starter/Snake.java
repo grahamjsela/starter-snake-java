@@ -125,21 +125,26 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
 
             String lastMove = "";
-            int myX = moveRequest.get("you").get("body").get(0).get("x").intValue();
-            int myY = moveRequest.get("you").get("body").get(0).get("y").intValue();
-            int boardX = moveRequest.get("board").get("width").intValue();
-            int boardY = moveRequest.get("board").get("height").intValue();
+            int turn = moveRequest.get("game").get("turn").intValue;
 
+            if (turn == 0) {
+              int myX = moveRequest.get("you").get("body").get(0).get("x").intValue();
+              int myY = moveRequest.get("you").get("body").get(0).get("y").intValue();
+              int boardX = moveRequest.get("board").get("width").intValue();
+              int boardY = moveRequest.get("board").get("height").intValue();
+            }
 
 
             if (myX != 0 && myX != boardX && myY != 0 && myY != boardY) {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "right");
+                myX++;
                 lastMove = "up";
 
               } else {
                 response.put("move", "left");
+                myX--;
                 lastMove = "down";
 
               }
@@ -147,17 +152,32 @@ public class Snake {
             } else {
               if (myX ==0 && myY == boardY) {
                 response.put("move", "right");
+                myX++;
                 lastMove = "right";
               } else if (myY == boardY && myX == boardX) {
                 response.put("move", "up");
+                myY--;
                 lastMove = "up";
               } else if (myY == 0 && myX == boardX) {
-                response.put("move", "down");
+                response.put("move", "left");
+                myX--;
                 lastMove = "left";
               } else if (myY == 0 && myX == 0) {
                 response.put("move", "down");
+                myY++;
                 lastMove = "down";
               } else {
+                switch (lastMove){}
+                  case "right":
+                    myX++;
+                  case "left":
+                    myX--;
+                  case "up":
+                    myY--;
+                  case "down":
+                    myY++;
+                }
+
                 response.put("move", lastMove);
 
               }
