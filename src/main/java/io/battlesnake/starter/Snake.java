@@ -38,7 +38,7 @@ public class Snake {
             port = "8080";
         }
         port(Integer.parseInt(port));
-        get("/", (req, res) -> "Battlesnake documentation can be found at " + 
+        get("/", (req, res) -> "Battlesnake documentation can be found at " +
             "<a href=\"https://docs.battlesnake.io\">https://docs.battlesnake.io</a>.");
         post("/start", HANDLER::process, JSON_MAPPER::writeValueAsString);
         post("/ping", HANDLER::process, JSON_MAPPER::writeValueAsString);
@@ -108,6 +108,8 @@ public class Snake {
         public Map<String, String> start(JsonNode startRequest) {
             Map<String, String> response = new HashMap<>();
             response.put("color", "#ff00ff");
+            response.put("headType", "fang");
+            response.put("tailType", "sharp");
             return response;
         }
 
@@ -119,7 +121,7 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            response.put("move", "right");
+            response.put("move", "left");
             return response;
         }
 
