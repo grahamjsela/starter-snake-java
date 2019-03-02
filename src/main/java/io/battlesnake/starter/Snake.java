@@ -122,7 +122,16 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            response.put("move", moveDecision());
+            Random test = new Random();
+            int move = test.nextInt(10);
+            if (move <3) {
+              response.put("move", "right");
+            } else if (move<6) {
+              response.put("move", "left");
+            } else {
+              response.put("move", "up");
+            }
+
             return response;
         }
 
