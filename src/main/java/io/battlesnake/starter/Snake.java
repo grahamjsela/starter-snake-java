@@ -21,6 +21,7 @@ import java.util.Random;
  * It follows the spec here: https://github.com/battlesnakeio/docs/tree/master/apis/snake
  */
 public class Snake {
+    public int i = 0;
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     private static final Handler HANDLER = new Handler();
     private static final Logger LOG = LoggerFactory.getLogger(Snake.class);
@@ -114,21 +115,6 @@ public class Snake {
             return response;
         }
 
-        int checkleft(){
-
-        }
-
-        String action(int x){
-          if(x == right)
-        }
-
-        int nextmove(){
-          // returns a value corresponding to the favourability of that move
-          int left = checkleft();
-          int right = checkright();
-          int up = checkup();
-          int down = checkdown();
-        }
 
         /**
          * /move is called by the engine for each turn the snake has.
@@ -138,29 +124,27 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
+            System.out.println(moveRequest.findValue("you"));
 
-            Random test = new Random();
-            int move = test.nextInt(10);
-            if (move <3) {
-              response.put("move", "right");
-            } else if (move<6) {
-              response.put("move", "left");
-            } else {
+            if (i %4 == 0){
               response.put("move", "up");
+            } else if (i %4 == 1){
+              response.put("move", "right");
+            } else if (i %4 == 0){
+              response.put("move", "down");
+            } else {
+              response.put("move", "left");
             }
 
-            // hello
 
-            int test (){
-              int x = x + 1;
-            }
+
+
+
 
             return response;
         }
 
-        public int movecheck() {
 
-        }
 
 
         /**
