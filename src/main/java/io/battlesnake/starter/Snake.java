@@ -136,11 +136,11 @@ public class Snake {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "right");
-                lastMove = "down";
+                lastMove = "up";
 
               } else {
                 response.put("move", "left");
-                lastMove = "up";
+                lastMove = "down";
 
               }
 
@@ -158,8 +158,7 @@ public class Snake {
                 response.put("move", "down");
                 lastMove = "down";
               } else {
-
-              response.put("move", lastMove);
+                response.put("move", lastMove);
 
               }
             }
