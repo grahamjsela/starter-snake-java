@@ -13,6 +13,7 @@ import java.util.Map;
 import static spark.Spark.port;
 import static spark.Spark.post;
 import static spark.Spark.get;
+import java.util.Random;
 
 /**
  * Snake server that deals with requests from the snake engine.
@@ -126,13 +127,15 @@ public class Snake {
         }
 
         public string moveDecision() {
-          //if (X? == 11) {
-            //if (Y? <5) {
-              return "right";
-          //  } else {
-              //return "left";
-          //  }
-          //}
+          Random test = new Random();
+          int move = test.nextInt(10);
+          if (move <3) {
+            return "left";
+          } else if (move<6) {
+            return "right";
+          } else {
+            return "up";
+          }
 
 
         }
