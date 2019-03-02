@@ -170,12 +170,18 @@ public class Snake {
                 switch (lastMove){}
                   case "right":
                     myX++;
+                    break;
                   case "left":
                     myX--;
+                    break;
                   case "up":
                     myY--;
+                    break;
                   case "down":
                     myY++;
+                    break;
+                  default:
+                    break;
                 }
 
                 response.put("move", lastMove);
