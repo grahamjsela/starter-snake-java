@@ -159,8 +159,8 @@ public class Snake {
                 lastMove = "down";
               } else {
 
-                response.put("move", lastMove);
-                }
+              response.put("move", lastMove);
+
               }
             }
 
