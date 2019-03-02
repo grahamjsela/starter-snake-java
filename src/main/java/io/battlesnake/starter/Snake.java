@@ -154,6 +154,9 @@ public class Snake {
             return response;
         }
 
+        public int movecheck() {
+
+        }
 
 
         /**
@@ -167,5 +170,7 @@ public class Snake {
             return response;
         }
     }
+
+
 
 }
