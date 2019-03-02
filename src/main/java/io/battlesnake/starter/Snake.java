@@ -21,7 +21,7 @@ import java.util.Random;
  * It follows the spec here: https://github.com/battlesnakeio/docs/tree/master/apis/snake
  */
 public class Snake {
-    public static int i = 0;
+    int j = 0;
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     private static final Handler HANDLER = new Handler();
     private static final Logger LOG = LoggerFactory.getLogger(Snake.class);
@@ -123,7 +123,8 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            if (i % 4 == 0){
+            int i = sizeOfSelf(moveRequest);
+            if (j % i == 0){
               response.put("move", "up");
             } else if (i %4 == 1){
               response.put("move", "right");
@@ -132,7 +133,7 @@ public class Snake {
             } else {
               response.put("move", "left");
             }
-            i++;
+            j++;
 
 
 
@@ -152,6 +153,11 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
             return response;
         }
+    }
+
+    public static int sizeOfSelf(JsonNode moveRequest) {
+      int i = moveRequest.you.body.length;
+      return i;
     }
 
 
