@@ -109,7 +109,7 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
             response.put("color", "#ff00ff");
             response.put("headType", "fang");
-            response.put("tailType", "sharp");
+            response.put("tailType", "bolt");
             return response;
         }
 
@@ -121,8 +121,20 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            response.put("move", "left");
+            response.put("move", moveDecision());
             return response;
+        }
+
+        public string moveDecision() {
+          //if (X? == 11) {
+            //if (Y? <5) {
+              return "right";
+          //  } else {
+              //return "left";
+          //  }
+          //}
+
+
         }
 
         /**
