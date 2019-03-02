@@ -113,6 +113,22 @@ public class Snake {
             return response;
         }
 
+        int checkleft(){
+          
+        }
+
+        String action(int x){
+          if(x == right)
+        }
+
+        int nextmove(){
+          // returns a value corresponding to the favourability of that move
+          int left = checkleft();
+          int right = checkright();
+          int up = checkup();
+          int down = checkdown();
+        }
+
         /**
          * /move is called by the engine for each turn the snake has.
          *
