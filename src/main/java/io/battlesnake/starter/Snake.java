@@ -21,7 +21,7 @@ import java.util.Random;
  * It follows the spec here: https://github.com/battlesnakeio/docs/tree/master/apis/snake
  */
 public class Snake {
-    int j = 0;
+    public static int j = 0;
     private static final ObjectMapper JSON_MAPPER = new ObjectMapper();
     private static final Handler HANDLER = new Handler();
     private static final Logger LOG = LoggerFactory.getLogger(Snake.class);
