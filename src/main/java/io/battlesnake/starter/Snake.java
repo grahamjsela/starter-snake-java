@@ -134,7 +134,7 @@ public class Snake {
               if (myX > (boardX - myX)) {
                 response.put("move", "left");
               } else {
-                repose.put("move", "right");
+                reponse.put("move", "right");
               }
 
             } else {
