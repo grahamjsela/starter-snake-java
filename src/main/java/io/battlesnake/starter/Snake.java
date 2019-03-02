@@ -149,18 +149,4 @@ public class Snake {
         }
     }
 
-    public string moveDecision() {
-      Random test = new Random();
-      int move = test.nextInt(10);
-      if (move <3) {
-        return "left";
-      } else if (move<6) {
-        return "right";
-      } else {
-        return "up";
-      }
-
-
-    }
-
 }
