@@ -124,7 +124,7 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            System.out.println(moveRequest.findValue("you"));
+            
 
             if (i %4 == 0){
               response.put("move", "up");
@@ -135,11 +135,6 @@ public class Snake {
             } else {
               response.put("move", "left");
             }
-
-
-
-
-
 
             return response;
         }
