@@ -126,19 +126,7 @@ public class Snake {
             return response;
         }
 
-        public string moveDecision() {
-          Random test = new Random();
-          int move = test.nextInt(10);
-          if (move <3) {
-            return "left";
-          } else if (move<6) {
-            return "right";
-          } else {
-            return "up";
-          }
 
-
-        }
 
         /**
          * /end is called by the engine when a game is complete.
@@ -150,6 +138,20 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
             return response;
         }
+    }
+
+    public string moveDecision() {
+      Random test = new Random();
+      int move = test.nextInt(10);
+      if (move <3) {
+        return "left";
+      } else if (move<6) {
+        return "right";
+      } else {
+        return "up";
+      }
+
+
     }
 
 }
