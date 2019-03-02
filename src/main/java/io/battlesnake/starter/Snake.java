@@ -13,6 +13,7 @@ import java.util.Map;
 import static spark.Spark.port;
 import static spark.Spark.post;
 import static spark.Spark.get;
+import java.util.Random;
 
 /**
  * Snake server that deals with requests from the snake engine.
@@ -109,12 +110,12 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
             response.put("color", "#ff00ff");
             response.put("headType", "fang");
-            response.put("tailType", "sharp");
+            response.put("tailType", "bolt");
             return response;
         }
 
         int checkleft(){
-          
+
         }
 
         String action(int x){
@@ -138,9 +139,20 @@ public class Snake {
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
 
-            response.put("move", "left");
+            Random test = new Random();
+            int move = test.nextInt(10);
+            if (move <3) {
+              response.put("move", "right");
+            } else if (move<6) {
+              response.put("move", "left");
+            } else {
+              response.put("move", "up");
+            }
+
             return response;
         }
+
+
 
         /**
          * /end is called by the engine when a game is complete.
