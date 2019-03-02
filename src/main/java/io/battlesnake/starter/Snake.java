@@ -133,9 +133,11 @@ public class Snake {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "left");
+                lastMove = "down";
 
               } else {
                 response.put("move", "right");
+                lastMove = "up";
 
               }
 
