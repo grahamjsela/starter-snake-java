@@ -152,7 +152,7 @@ public class Snake {
                 response.put("move", "up");
                 lastMove = "up";
               } else if (myY == 0 && myX == boardX) {
-                response.put("move", "left");
+                response.put("move", "down");
                 lastMove = "left";
               } else if (myY == 0 && myX == 0) {
                 response.put("move", "down");
