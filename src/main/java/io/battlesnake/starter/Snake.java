@@ -123,12 +123,12 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            
+
             if (j % 4 == 0){
               response.put("move", "up");
-            } else if (i %4 == 1){
+            } else if (j %4 == 1){
               response.put("move", "right");
-            } else if (i %4 == 2){
+            } else if (j %4 == 2){
               response.put("move", "down");
             } else {
               response.put("move", "left");
