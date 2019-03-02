@@ -151,6 +151,10 @@ public class Snake {
 
             // hello
 
+            int test (){
+              int x = x + 1;
+            }
+
             return response;
         }
 
