@@ -124,70 +124,16 @@ public class Snake {
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
 
-            String lastMove = "";
-            int turn = moveRequest.get("game").get("turn").intValue;
-
-            if (turn == 0) {
-              int myX = moveRequest.get("you").get("body").get(0).get("x").intValue();
-              int myY = moveRequest.get("you").get("body").get(0).get("y").intValue();
-              int boardX = moveRequest.get("board").get("width").intValue();
-              int boardY = moveRequest.get("board").get("height").intValue();
-            }
-
-
-            if (myX != 0 && myX != boardX && myY != 0 && myY != boardY) {
-
-              if (myX > (boardX - myX)) {
-                response.put("move", "right");
-                myX++;
-                lastMove = "up";
-
-              } else {
-                response.put("move", "left");
-                myX--;
-                lastMove = "down";
-
-              }
-
+            if (j % 4 == 0){
+              response.put("move", "up");
+            } else if (j % 4 == 1){
+              response.put("move", "right");
+            } else if (j % 4 == 2){
+              response.put("move", "down");
             } else {
-              if (myX ==0 && myY == boardY) {
-                response.put("move", "right");
-                myX++;
-                lastMove = "right";
-              } else if (myY == boardY && myX == boardX) {
-                response.put("move", "up");
-                myY--;
-                lastMove = "up";
-              } else if (myY == 0 && myX == boardX) {
-                response.put("move", "left");
-                myX--;
-                lastMove = "left";
-              } else if (myY == 0 && myX == 0) {
-                response.put("move", "down");
-                myY++;
-                lastMove = "down";
-              } else {
-                switch (lastMove){}
-                  case "right":
-                    myX++;
-                    break;
-                  case "left":
-                    myX--;
-                    break;
-                  case "up":
-                    myY--;
-                    break;
-                  case "down":
-                    myY++;
-                    break;
-                  default:
-                    break;
-                }
-
-                response.put("move", lastMove);
-
-              }
+              response.put("move", "left");
             }
+            j++;
 
             return response;
         }
