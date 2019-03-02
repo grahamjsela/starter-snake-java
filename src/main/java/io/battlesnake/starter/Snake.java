@@ -129,7 +129,7 @@ public class Snake {
             int myY = moveRequest.get("you").get("body").get("y").intValue();
             int boardX = moveRequest.get("board").get("width").intValue();
             int boardY = moveRequest.get("board").get("height").intValue();
-            if ((myX != 0 && myX != boardX) && (myY != 0 && myY != boardY)) {
+            if ((myX != 0 && myX != boardX) || (myY != 0 && myY != boardY)) {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "left");
