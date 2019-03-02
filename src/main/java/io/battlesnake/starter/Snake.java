@@ -133,12 +133,12 @@ public class Snake {
               response.put("move", "left");
             }
 
-            return response;
+            
 
             return response;
         }
 
-        
+
 
 
         /**
