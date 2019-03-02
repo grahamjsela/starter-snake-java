@@ -132,6 +132,7 @@ public class Snake {
             } else {
               response.put("move", "left");
             }
+            i++;
 
 
 
