@@ -123,8 +123,8 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            int i = sizeOfSelf(moveRequest);
-            if (j % i == 0){
+            
+            if (j % 4 == 0){
               response.put("move", "up");
             } else if (i %4 == 1){
               response.put("move", "right");
@@ -134,8 +134,6 @@ public class Snake {
               response.put("move", "left");
             }
             j++;
-
-
 
             return response;
         }
@@ -155,11 +153,6 @@ public class Snake {
         }
     }
 
-    public static int sizeOfSelf(JsonNode moveRequest) {
-      int temp = moveRequest.get("you.body");
-
-      return temp;
-    }
 
 
 
