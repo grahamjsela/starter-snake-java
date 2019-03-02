@@ -125,13 +125,14 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
 
             String lastMove = "";
-            int myX = moveRequest.get("you").get("body").get("x").intValue();
-            int myY = moveRequest.get("you").get("body").get("y").intValue();
+            int myX = moveRequest.get("you").get("body")[0].get("x").intValue();
+            int myY = moveRequest.get("you").get("body")[0].get("y").intValue();
             int boardX = moveRequest.get("board").get("width").intValue();
             int boardY = moveRequest.get("board").get("height").intValue();
 
 
-            if (myX != 1 && myX != boardX && myY != 1 && myY != boardY) {
+
+            if (myX != 0 && myX != boardX && myY != 0 && myY != boardY) {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "right");
@@ -157,10 +158,8 @@ public class Snake {
                 response.put("move", "down");
                 lastMove = "down";
               } else {
-                if (myX == 1) {
-                  response.put("move", "left");
-                } else {
-                  response.put("move", lastMove);
+
+                response.put("move", lastMove);
                 }
               }
             }
