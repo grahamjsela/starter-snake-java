@@ -125,8 +125,8 @@ public class Snake {
             Map<String, String> response = new HashMap<>();
 
             String lastMove = "";
-            int myX = moveRequest.get("you").get("body")[0].get("x").intValue();
-            int myY = moveRequest.get("you").get("body")[0].get("y").intValue();
+            int myX = moveRequest.get("you").get("body").get(0).get("x").intValue();
+            int myY = moveRequest.get("you").get("body").get(0).get("y").intValue();
             int boardX = moveRequest.get("board").get("width").intValue();
             int boardY = moveRequest.get("board").get("height").intValue();
 
