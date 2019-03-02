@@ -124,7 +124,7 @@ public class Snake {
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
 
-            String lastMove;
+            String lastMove = "";
             int myX = moveRequest.get("you").get("body").get("x").intValue();
             int myY = moveRequest.get("you").get("body").get("y").intValue();
             int boardX = moveRequest.get("board").get("width").intValue();
@@ -133,8 +133,10 @@ public class Snake {
 
               if (myX > (boardX - myX)) {
                 response.put("move", "left");
+
               } else {
                 response.put("move", "right");
+
               }
 
             } else {
