@@ -115,7 +115,6 @@ public class Snake {
             return response;
         }
 
-
         /**
          * /move is called by the engine for each turn the snake has.
          *
@@ -124,8 +123,6 @@ public class Snake {
          */
         public Map<String, String> move(JsonNode moveRequest) {
             Map<String, String> response = new HashMap<>();
-            
-
             if (i %4 == 0){
               response.put("move", "up");
             } else if (i %4 == 1){
@@ -137,9 +134,11 @@ public class Snake {
             }
 
             return response;
+
+            return response;
         }
 
-
+        
 
 
         /**
