@@ -156,7 +156,7 @@ public class Snake {
     }
 
     public static int sizeOfSelf(JsonNode moveRequest) {
-      int temp = moveRequest.readTree((req.body()).length);
+      int temp = moveRequest.get("you.body");
 
       return temp;
     }
